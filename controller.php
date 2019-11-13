@@ -12,7 +12,7 @@
     $view = "";
 
     // config
-        $url = "http://localhost/lojavirtual-off";
+        $url = "http://localhost/loja2";
 
     switch($router){
 
@@ -21,27 +21,27 @@
             $obj = new \LOJA\API\CategoriaCadastrar;
             $msg = $obj->msg;
             $view = "form-categoria.php";
-            break;
+        break;
 
         case 'categorialistar':
 
             $obj = new \LOJA\API\CategoriaListar;            
             $lista = $obj->lista;
             $view = "lista-categoria.php";
-            break;
+        break;
 
         case 'categoriavisualizar':
             $obj = new \LOJA\API\CategoriaVisualizar; 
             $categoria = $obj->dados;
             $view = "visualiza-categoria.php";
-            break;
+        break;
 
         case 'clientecadastrar':
         
             $obj = new \LOJA\API\ClienteCadastrar;
             $msg = $obj->msg;
             $view = "form-cliente.php";
-            break;
+        break;
 
 
             // admin/cliente/listar

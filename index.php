@@ -1,3 +1,3 @@
-<?php header("location: http://localhost/lojavirtual-off/produto/listar"); ?>
+<?php header("location: http://localhost/loja2/produto/listar"); ?>
     
  
