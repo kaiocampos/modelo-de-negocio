@@ -24,7 +24,7 @@
             $view = "form-categoria.php";
         break;
         case 'categorialistar':
-
+            \LOJA\includes\Seguranca::restritoAdm();
             $obj = new \LOJA\API\CategoriaListar;            
             $lista = $obj->lista;
             $view = "lista-categoria.php";
@@ -45,8 +45,8 @@
             $obj = new \LOJA\API\ClienteListar;            
             $lista = $obj->lista;
             $view = "lista-cliente.php";
-        break;
-            // admin/cliente/visualizar/:id
+            break;
+           
         case 'clientevisualizar':
             $obj = new \LOJA\API\ClienteVisualizar; 
             $cliente = $obj->cliente;
