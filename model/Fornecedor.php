@@ -1,5 +1,5 @@
 <?php
-
+namespace LOJA\Model;
     class Fornecedor{
 
         private $pk_fornecedor;

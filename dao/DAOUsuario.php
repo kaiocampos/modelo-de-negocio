@@ -1,4 +1,7 @@
 <?php
+namespace LOJA\DAO;
+use LOJA\Model\Conexao;
+use LOJA\Model\Usuario;
 
 class DAOUsuario{
     public function cadastrarUsuario(Usuario $usuario){
@@ -34,5 +37,20 @@ class DAOUsuario{
             $lista[] = $usuario;
         }
         return $lista;
-}
+    }
+    public function buscaPorNomeSenha(Usuario $usuario)
+    {
+        $sql = "SELECT pk_usuario as id,nome FROM usuario WHERE nome = :nome AND senha = :senha";
+
+        $con = Conexao::getInstance()->prepare($sql);
+        $con->bindValue(':nome', $usuario->getNome());
+        $con->bindValue(':senha', $usuario->getSenha());
+        $con->execute();
+
+        $obj = new Usuario();
+        $obj = $con->fetch(\PDO::FETCH_ASSOC);
+
+        return $obj;
+
+    }
 }
