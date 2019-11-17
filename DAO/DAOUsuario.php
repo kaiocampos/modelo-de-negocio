@@ -8,9 +8,9 @@ class DAOUsuario{
         $sql = "INSERT INTO usuario VALUES (default, :nome, :senha)"; 
         $con = conexao::getInstance()->prepare($sql);
         $con->bindValue(':nome', $usuario->getNome());
-        $con->bindValue(':senha', $usuario->getSenha());
-        
+        $con->bindValue(':senha', $usuario->getSenha());        
         $con->execute();
+        
         return "Cadastrado com Sucesso!";
     }
 
@@ -26,7 +26,7 @@ class DAOUsuario{
         return $usuario;
     }
 
-    public function listaUsuario(){
+    public function listaUsuarios(){
         $sql = "SELECT * FROM usuario";
         $con = Conexao::getInstance()->prepare($sql);
         $con->execute();

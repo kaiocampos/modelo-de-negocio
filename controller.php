@@ -8,34 +8,35 @@
     // começa a contar do adin, pois o htaccess está na raiz
 
     $router = $_GET['model'].$_GET['action'];
-    // router = departamentolistar
+    // router = departamento/cadastrar/listar
 
     $view = "";
 
     // config
-        $url = "http://localhost/loja2";
+    $url = "http://localhost/senac/modelo-de-negocio";
 
     switch($router){
 
-        case 'categoriacadastrar':
-            
+        case 'categoriacadastrar':            
             $obj = new \LOJA\API\CategoriaCadastrar;
             $msg = $obj->msg;
             $view = "form-categoria.php";
         break;
+
         case 'categorialistar':
             \LOJA\includes\Seguranca::restritoAdm();
             $obj = new \LOJA\API\CategoriaListar;            
             $lista = $obj->lista;
             $view = "lista-categoria.php";
         break;
+
         case 'categoriavisualizar':
             $obj = new \LOJA\API\CategoriaVisualizar; 
             $categoria = $obj->dados;
             $view = "visualiza-categoria.php";
         break;
-        case 'clientecadastrar':
         
+        case 'clientecadastrar':        
             $obj = new \LOJA\API\ClienteCadastrar;
             $msg = $obj->msg;
             $view = "form-cliente.php";
@@ -45,7 +46,7 @@
             $obj = new \LOJA\API\ClienteListar;            
             $lista = $obj->lista;
             $view = "lista-cliente.php";
-            break;
+        break;
            
         case 'clientevisualizar':
             $obj = new \LOJA\API\ClienteVisualizar; 
@@ -56,8 +57,10 @@
         
             $obj = new \LOJA\API\ProdutoCadastrar;
             $msg = $obj->msg;
+
             $obj2 = new \LOJA\API\CategoriaListar;                ;
             $lista = $obj2->lista;
+
             $view = "form-produto.php";
         break;
         case 'produtolistar':
@@ -66,32 +69,37 @@
             $view = "lista-produto.php";
         break;
         case 'usuariocadastrar':
-            include "actions/cadastrar-usuarios.php";
+            $obj = new \LOJA\API\UsuarioCadastrar;
+            $msg = $obj->msg;
             $view = "form-usuario.php";
         break;
         case 'usuariolistar':
-            include "actions/listar-usuario.php";
+            $obj = new \LOJA\API\UsuarioListar;
+            $lista = $obj->lista;
             $view = "lista-usuario.php";
-            break;
+        break;
 
         case 'usuariovisualizar':
-            include "actions/buscar-usuarios.php";
+            $obj = new LOJA\API\UsuarioVisualizar;
+            $usuario = $obj->dados;
             $view = "visualiza-usuario.php";
-            break;
+        break;
 
         case 'fornecedorcadastrar':
-            include "actions/cadastrar-fornecedor.php";
+            $obj = new LOJA\API\FornecedorCadastrar;
+            $msg = $obj->msg;
             $view = "form-fornecedor.php";
-            break;
-
+        break;
         
         case 'fornecedorlistar':
-            include "actions/listar-fornecedor.php";
+            $obj = new LOJA\API\FornecedorListar;
+            $lista = $obj->lista;
             $view = "lista-fornecedor.php";
-            break;
+        break;
 
         case 'fornecedorvisualizar':
-            include "actions/buscar-fornecedor.php";
+            $obj = new LOJA\API\FornecedorVisualizar;
+            $fornecedor = $obj->dado;            
             $view = "visualiza-fornecedor.php";
         break;
 

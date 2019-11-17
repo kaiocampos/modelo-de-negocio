@@ -1,4 +1,7 @@
 <?php
+namespace LOJA\DAO;
+use LOJA\Model\Conexao;
+use LOJA\Model\Fornecedor;
 
 class DAOFornecedor{
     public function cadastrarFornecedor(Fornecedor $fornecedor){

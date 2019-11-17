@@ -1,8 +1,14 @@
 <?php
-require_once "model/conexao.php";
-require_once "dao/usuario.dao.php";
+namespace LOJA\API;
+use LOJA\DAO\DAOUsuario;
 
-$obj = new DAOUsuario();
-$lista = $obj->listaUsuario();
+class UsuarioListar{
+    public $lista;
 
+    public function __construct() {
+          
+        $obj = new DAOUsuario();
+        $this->lista = $obj->listaUsuarios();
+    }
+}
 ?>

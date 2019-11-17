@@ -1,17 +1,22 @@
 <?php
+namespace LOJA\API;
+use LOJA\DAO\DAOFornecedor;
 
-if ($_GET['id']) {
+class FornecedorVisualizar{
+    public $dado;
 
-    require_once "model/conexao.php";
-    require_once "model/fornecedor.class.php";
-    require_once "dao/fornecedor.dao.php";
-
-    try {
-        $DAO = new DAOFornecedor();
-        $fornecedor = $DAO->buscarPorId($_GET['id']);
+    public function __construct() {
+        
+        if ($_GET['id']) {
+            try {
+                        
+                $DAO = new DAOFornecedor();
+                $this->dado = $DAO->buscarPorId($_GET['id']);
        
-    } catch (Exception $erro) {
-        $msg = $erro->getMessage();
+            } catch (Exception $e) {
+                $this->dado = $e->getMessage();
+            }
+        }
     }
 }
 ?>

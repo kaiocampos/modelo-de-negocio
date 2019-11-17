@@ -4,7 +4,7 @@ class Util{
     
     public static function uploadImg(){
         // ENVIA IMAGEM
-        $target_dir = "View/img/produtos/"; // MUDA DIRETÓRIO
+        $target_dir = "view/img/produtos/"; // MUDA DIRETÓRIO
        // $target_file = $target_dir . basename($_FILES["imagem"]["name"]); // PEGA O ARQUIVO
         $uploadOk = 1; // 1 QUER DIZER OK
         $extension = strtolower(pathinfo($_FILES["imagem"]["name"] ,PATHINFO_EXTENSION)); // PEGA EXTENSÃO

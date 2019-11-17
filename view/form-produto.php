@@ -1,8 +1,4 @@
-<?php
-
-  include "view/header.php";
-  
-?>
+<?php  include "view/header.php";?>
 
 <form class="form-horizontal" method="post" action="cadastrar" enctype="multipart/form-data">
     <fieldset>
@@ -12,7 +8,7 @@
 
     <!-- Text input-->
     <div class="form-group">
-    <label class="col-md-4 control-label" for="textinput">Nome</label>  
+    <label class="col-md-4 control-label" for="text">Nome</label>  
     <div class="col-md-4">
     <input id="nome" name="nome" type="text" placeholder="" class="form-control input-md" required="">
         
@@ -29,7 +25,7 @@
     </div>
 
     <div class="form-group">
-    <label class="col-md-4 control-label" for="senha">Categoria</label>  
+    <label class="col-md-4 control-label" for="categoria">Categoria</label>  
     <div class="col-md-4">
     <select name="categoria" class="form-control input-mb">
 
@@ -50,7 +46,7 @@
 
   <!-- Text input-->
   <div class="form-group">
-                <label class="col-md-4 control-label" for="descricao">Imagem    </label>  
+                <label class="col-md-4 control-label" for="imagem">Imagem    </label>  
                 <div class="col-md-4">
   <input id="imagem" name="imagem" type="file" placeholder="" class="form-control input-md" required="">
   </div>

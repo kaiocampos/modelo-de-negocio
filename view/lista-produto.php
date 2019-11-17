@@ -1,8 +1,5 @@
-<?php
+<?php include "view/header.php";?>
 
-  include "view/header.php";
-  
-?>
 <table class="table">
     <thead>
         <th scope="col"></th>
@@ -17,7 +14,7 @@
         <?php foreach ($lista as $produto) {?>
         <tr>
 
-           <td><img width="50" src="../View/img/produtos/<?php echo $produto['imagem'] ?>"></td>
+           <td><img width="50" src="../view/img/produtos/<?php echo $produto['imagem'] ?>"></td>
 
 
             <th scope="row"><?php echo $produto['id']?> </th>

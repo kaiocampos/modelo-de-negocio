@@ -1,19 +1,25 @@
 <?php
-if ($_POST) {
-    require_once "model/conexao.php";
-    require_once "model/usuario.class.php";
-    require_once "dao/usuario.dao.php";
+namespace LOJA\API;
+use LOJA\Model\Usuario;
+use LOJA\DAO\DAOUsuario;
 
-    try {
-        $cadastrar = new Usuario();
-        $cadastrar->setNome($_POST['nome']);
-        $cadastrar->setSenha($_POST['senha']);
-        
-        $DAO = new DAOUsuario;
-        $msg = $DAO->cadastrarUsuario($cadastrar);
+class UsuarioCadastrar{
+    public $msg;
 
-    } catch (Exception $erro) {
-        $msg = $erro->getMessage();
+    public function __construct(){
+        if ($_POST) {
+            try {
+                $cadastrar = new Usuario();
+                $cadastrar->setNome($_POST['nome']);
+                $cadastrar->setSenha($_POST['senha']);
+                
+                $DAO = new DAOUsuario;
+                $this->msg = $DAO->cadastrarUsuario($cadastrar);
+
+            } catch (Exception $e) {
+                $$this->msg = $e->getMessage();
+            }
+        }
     }
 }
 ?>

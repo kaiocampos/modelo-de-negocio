@@ -20,7 +20,7 @@ class UsuarioLogar{
                     $_SESSION['usuarioid'] = $result['id'];
                     $_SESSION['usuarionome'] = $result['nome'];
                     
-                    header ("location: http://localhost/loja2/painel/adm");
+                    header ("location: http://localhost/senac/modelo-de-negocio/login/adm");
                 }else{
                     $this->msg = 'Usuário/Senha inválidos';
                 }

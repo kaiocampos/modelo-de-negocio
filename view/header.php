@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?php echo $url; ?>/css/bootstrap.css">
 
     <title>Hello, world!</title>
   </head>
@@ -30,7 +30,7 @@
           Clientes
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="ctrl-cliente-lista.php">Lista de Cliente</a>
+          <a class="dropdown-item" href="<?php echo $url; ?>/cliente/listar">Lista de Cliente</a>
           
         </div>
       </li>
@@ -39,8 +39,8 @@
           Usuários
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="ctrl-usuario-lista.php">Lista de Ususário</a>
-          <a class="dropdown-item" href="ctrl-cadastro-usuario.php">Novo Usuário</a>
+          <a class="dropdown-item" href="<?php echo $url; ?>/usuario/listar ">Lista de Ususário</a>
+          <a class="dropdown-item" href="<?php echo $url; ?>/usuario/cadastrar">Novo Usuário</a>
           
         </div>
       </li>
@@ -49,8 +49,8 @@
           Categorias
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="ctrl-categoria-lista.php">Lista de Categorias</a>
-          <a class="dropdown-item" href="ctrl-categoria-cadastro.php">Nova Categoria</a>
+          <a class="dropdown-item" href="<?php echo $url; ?>/categoria/listar">Lista de Categorias</a>
+          <a class="dropdown-item" href="<?php echo $url; ?>/categoria/cadastrar">Nova Categoria</a>
           
         </div>
       </li>

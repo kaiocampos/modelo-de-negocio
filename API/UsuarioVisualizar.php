@@ -1,17 +1,20 @@
 <?php
+namespace LOJA\API;
 
-if ($_GET['id']) {
+use LOJA\DAO\DAOUsuario;
 
-    require_once "model/conexao.php";
-    require_once "model/usuario.class.php";
-    require_once "dao/usuario.dao.php";
+class UsuarioVisualizar{
+    public $dados;
 
-    try {
-        $DAO = new DAOUsuario();
-        $usuario = $DAO->buscarPorId($_GET['id']);
-       
-    } catch (Exception $erro) {
-        $msg = $erro->getMessage();
+    public function __construct(){
+        if ($_GET['id']) {
+            try {
+                $DAO = new DAOUsuario();
+                $usuario = $DAO->buscarPorId($_GET['id']);
+            }catch (Exception $e) {
+                $msg = $e->getMessage();
+            }
+        }
     }
 }
 ?>

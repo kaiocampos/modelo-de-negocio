@@ -1,8 +1,15 @@
 <?php
-require_once "model/conexao.php";
-require_once "dao/fornecedor.dao.php";
+namespace LOJA\API;
 
-$obj = new DAOFornecedor();
-$lista = $obj->listaFornecedor();
+use LOJA\DAO\DAOFornecedor;
 
+class FornecedorListar{
+    public $lista;
+
+    public function __construct() {
+    
+        $obj = new DAOFornecedor();
+        $this->lista = $obj->listaFornecedor();
+    }
+}
 ?>
