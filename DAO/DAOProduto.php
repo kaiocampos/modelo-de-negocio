@@ -39,8 +39,6 @@ class DAOProduto{
             $lista[] = $produto;
         }
         return $lista;
-
-
     }
 }
 ?>
